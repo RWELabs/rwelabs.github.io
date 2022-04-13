@@ -1,0 +1,2373 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Stardew Valley Mod Manager - RWE Labs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Icon50x.png" rel="icon" sizes="50x50" type="image/png">
+<link href="Icon50x.png" rel="icon" sizes="50x50" type="image/png">
+<link href="Icon50x.png" rel="icon" sizes="50x50" type="image/png">
+<style>
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: "MS Serif";
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+a
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a:visited
+{
+   color: #800080;
+}
+a:active
+{
+   color: #FF0000;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+input:focus, textarea:focus, select:focus
+{
+   outline: none;
+}
+</style>
+<link href="font-awesome.min.css" rel="stylesheet">
+<style>
+a.RWELabsLinkStyle
+{
+   color: #D55A70;
+   text-decoration: underline;
+}
+a.RWELabsLinkStyle:visited
+{
+   color: #D55A70;
+   text-decoration: underline;
+}
+a.RWELabsLinkStyle:active
+{
+   color: #D55A70;
+   text-decoration: underline;
+}
+a.RWELabsLinkStyle:hover
+{
+   color: #B8325E;
+   text-decoration: underline;
+}
+#wb_IconFont1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #245580;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   vertical-align: top;
+   display:inline-block;
+   position:relative;
+}
+#wb_IconFont1:hover
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #245580;
+}
+#IconFont1
+{
+   height: 51px;
+   width: 58px;
+}
+#IconFont1 i
+{
+   color: #B8325E;
+   display: inline-block;
+   font-size: 51px;
+   line-height: 51px;
+   vertical-align: middle;
+   width: 46px;
+}
+#wb_IconFont1:hover i
+{
+   color: #B8325E;
+}
+#wb_Heading4
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   vertical-align: top;
+   margin: 0;
+   padding: 5px 0px 0px 0px;
+   text-align: center;
+}
+#Heading4
+{
+   color: #D55A70;
+   font-family: "MS Sans Serif";
+   font-weight: bold;
+   font-style: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: center;
+}
+#wb_CssMenu2
+{
+   border: 0px solid #C0C0C0;
+   background-color: transparent;
+   margin: 0;
+   text-align: left;
+   z-index: 1111 !important;
+}
+#wb_CssMenu2 ul
+{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   display: inline-block;
+}
+#wb_CssMenu2 li
+{
+   float: left;
+   margin: 0;
+   padding: 0px 0px 0px 0px;
+   width: 145px;
+}
+#wb_CssMenu2 a
+{
+   display: block;
+   float: left;
+   color: #999999;
+   border: 0px solid #CCCCCC;
+   background-color: transparent;
+   background-image: none;
+   font-family: "MS Sans Serif";
+   font-weight: normal;
+   font-size: 15px;
+   font-style: normal;
+   text-decoration: none;
+   width: 135px;
+   height: 28px;
+   padding: 0px 5px 0px 5px;
+   vertical-align: middle;
+   line-height: 28px;
+   text-align: left;
+}
+#wb_CssMenu2 li:hover a, #wb_CssMenu2 a:hover, #wb_CssMenu2 .active
+{
+   color: #FFFFFF;
+   border: 0px solid #2E6DA4;
+   background-color: transparent;
+   background-image: none;
+}
+#wb_CssMenu2 li.firstmain
+{
+   padding-left: 0px;
+}
+#wb_CssMenu2 li.lastmain
+{
+   padding-right: 0px;
+}
+#wb_CssMenu2 br
+{
+   clear: both;
+   font-size: 1px;
+   height: 0;
+   line-height: 0;
+}
+#CssMenu2 li i
+{
+   font-size: 15px;
+   margin-right: 4px;
+   width: 17px;
+}
+#header
+{
+   display: -webkit-flex;
+   display: flex;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   z-index: 7777;
+   padding: 10px 3px 10px 3px;
+   box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-justify-content: space-between;
+   justify-content: space-between;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-align-content: flex-start;
+   align-content: flex-start;
+   margin: 0;
+   background-color: #343A40;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   font-size: 0px;
+}
+#wb_home
+{
+   background-color: #FFEAE8;
+   background: linear-gradient(315deg, #EDC2D1 0%, #FFEAE8 100%);
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   position: relative;
+}
+#home
+{
+   display: -webkit-flex;
+   display: flex;
+   position: relative;
+   min-height: 100vh;
+   padding: 125px 10px 50px 10px;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-align-items: stretch;
+   align-items: stretch;
+   -webkit-align-content: center;
+   align-content: center;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1024px;
+   box-sizing: border-box;
+   font-size: 0px;
+}
+#wb_features
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #F5F5F5;
+   box-sizing: border-box;
+   position: relative;
+}
+#features
+{
+   display: -webkit-flex;
+   display: flex;
+   position: relative;
+   padding: 50px 10px 50px 10px;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-align-items: stretch;
+   align-items: stretch;
+   -webkit-align-content: center;
+   align-content: center;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1024px;
+   background-color: transparent;
+   background-image: none;
+   box-sizing: border-box;
+   font-size: 0px;
+}
+#wb_howto
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #F5F5F5;
+   box-sizing: border-box;
+   position: relative;
+}
+#howto
+{
+   display: -webkit-flex;
+   display: flex;
+   position: relative;
+   padding: 50px 10px 50px 10px;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-align-items: stretch;
+   align-items: stretch;
+   -webkit-align-content: center;
+   align-content: center;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1024px;
+   background-color: transparent;
+   background-image: none;
+   box-sizing: border-box;
+   font-size: 0px;
+}
+#wb_Text3 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #C0C0C0;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 8px 15px 8px 15px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text3
+{
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 16px;
+}
+#wb_Text3 div
+{
+   text-align: center;
+}
+#StickyLayer
+{
+   background-color: #3E3E3E;
+   background-image: none;
+   opacity: 0.77;
+}
+#wb_up-arrow
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #3E3E3E;
+   text-align: center;
+   margin: 0;
+   padding: 4px 4px 4px 4px;
+   vertical-align: top;
+}
+#wb_up-arrow:hover
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #3E3E3E;
+}
+#up-arrow
+{
+   height: 24px;
+   width: 24px;
+}
+#up-arrow i
+{
+   color: #FFFFFF;
+   display: inline-block;
+   font-size: 24px;
+   line-height: 24px;
+   vertical-align: middle;
+   width: 14px;
+}
+#wb_up-arrow:hover i
+{
+   color: #FFFFFF;
+}
+#wb_Heading2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   margin: 0;
+   padding: 0px 0px 25px 0px;
+   text-align: center;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+}
+#Heading2
+{
+   color: #D55A70;
+   font-family: "MS Sans Serif";
+   font-weight: bold;
+   font-style: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text2 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0px 25px 35px 25px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text2
+{
+   color: #343A40;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text2 div
+{
+   text-align: center;
+}
+#wb_Heading3
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   margin: 0;
+   padding: 0px 0px 25px 0px;
+   text-align: center;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+}
+#Heading3
+{
+   color: #D55A70;
+   font-family: "MS Sans Serif";
+   font-weight: bold;
+   font-style: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 5px 10px 15px 10px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text1
+{
+   color: #343A40;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text1 div
+{
+   text-align: center;
+}
+#wb_Image2
+{
+   margin: 0;
+   -webkit-flex-grow: 0;
+   flex-grow: 0;
+   -webkit-flex-shrink: 0;
+   flex-shrink: 0;
+   -webkit-align-self: auto;
+   align-self: auto;
+   vertical-align: top;
+}
+#Image2
+{
+   border-width: 0;
+   display: inline-block;
+   width: 727px;
+   height: auto;
+}
+#wb_LayoutGrid5
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid5
+{
+   box-sizing: border-box;
+   padding: 0px 15px 0px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid5 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid5 > .row > .col-1, #LayoutGrid5 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0px;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid5 > .row > .col-1, #LayoutGrid5 > .row > .col-2
+{
+   float: left;
+}
+#LayoutGrid5 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 33.33333333%;
+   text-align: left;
+}
+#LayoutGrid5 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 66.66666667%;
+   text-align: left;
+}
+#LayoutGrid5:before,
+#LayoutGrid5:after,
+#LayoutGrid5 .row:before,
+#LayoutGrid5 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid5:after,
+#LayoutGrid5 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid5 > .row > .col-1, #LayoutGrid5 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_CssMenu1
+{
+   border: 0px solid #C0C0C0;
+   background-color: transparent;
+   margin: 0;
+   text-align: right;
+   z-index: 1111 !important;
+}
+#wb_CssMenu1 ul
+{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   display: inline-block;
+}
+#wb_CssMenu1 li
+{
+   float: left;
+   margin: 0;
+   padding: 0px 0px 0px 4px;
+}
+#wb_CssMenu1 a
+{
+   display: block;
+   float: left;
+   color: #999999;
+   border: 0px solid #CCCCCC;
+   background-color: transparent;
+   background-image: none;
+   font-family: "MS Sans Serif";
+   font-weight: normal;
+   font-size: 15px;
+   font-style: normal;
+   text-decoration: none;
+   height: 28px;
+   line-height: 28px;
+   padding: 0px 5px 0px 5px;
+   vertical-align: middle;
+   text-align: center;
+}
+#wb_CssMenu1 li:hover a, #wb_CssMenu1 a:hover, #wb_CssMenu1 .active
+{
+   color: #FFFFFF;
+   border: 0px solid #2E6DA4;
+   background-color: transparent;
+   background-image: none;
+}
+#wb_CssMenu1 li.firstmain
+{
+   padding-left: 0px;
+}
+#wb_CssMenu1 li.lastmain
+{
+   padding-right: 0px;
+}
+#wb_CssMenu1 br
+{
+   clear: both;
+   font-size: 1px;
+   height: 0;
+   line-height: 0;
+}
+#CssMenu1 li i
+{
+   font-size: 15px;
+   margin-right: 4px;
+   width: 17px;
+}
+#wb_LayoutGrid6
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid6
+{
+   box-sizing: border-box;
+   padding: 0px 15px 7px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid6 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid6 > .row > .col-1, #LayoutGrid6 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0px;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid6 > .row > .col-1, #LayoutGrid6 > .row > .col-2
+{
+   float: left;
+}
+#LayoutGrid6 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 41.66666667%;
+   text-align: center;
+}
+#LayoutGrid6 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 58.33333333%;
+   text-align: left;
+}
+#LayoutGrid6:before,
+#LayoutGrid6:after,
+#LayoutGrid6 .row:before,
+#LayoutGrid6 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid6:after,
+#LayoutGrid6 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid6 > .row > .col-1, #LayoutGrid6 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Picture1
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Picture1
+{
+   border: 0px solid #000000;
+   box-sizing: border-box;
+   padding: 0;
+   display: inline-block;
+   width: 356px;
+   height: 398px;
+   vertical-align: top;
+}
+#wb_Heading1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   vertical-align: top;
+   margin: 0;
+   padding: 5px 0px 0px 0px;
+   text-align: center;
+}
+#Heading1
+{
+   color: #D55A70;
+   font-family: "MS Sans Serif";
+   font-weight: bold;
+   font-style: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text10 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 0px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text10
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text10 div
+{
+   text-align: left;
+}
+#wb_Text10
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text11 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 3px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text11
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text11 div
+{
+   text-align: left;
+}
+#wb_Text11
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text12 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 8px 15px 0px 30px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text12
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text12 div
+{
+   text-align: left;
+}
+#wb_Text12
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text13 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 23px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text13
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text13 div
+{
+   text-align: left;
+}
+#wb_Text13
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text14 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 3px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text14
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text14 div
+{
+   text-align: left;
+}
+#wb_Text14
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_LayoutGrid7
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid7
+{
+   box-sizing: border-box;
+   padding: 0px 15px 0px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid7 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid7 > .row > .col-1, #LayoutGrid7 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0px;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid7 > .row > .col-1, #LayoutGrid7 > .row > .col-2
+{
+   float: left;
+}
+#LayoutGrid7 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 58.33333333%;
+   text-align: center;
+}
+#LayoutGrid7 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 41.66666667%;
+   text-align: left;
+}
+#LayoutGrid7:before,
+#LayoutGrid7:after,
+#LayoutGrid7 .row:before,
+#LayoutGrid7 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid7:after,
+#LayoutGrid7 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid7 > .row > .col-1, #LayoutGrid7 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Picture2
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Picture2
+{
+   border: 0px solid #000000;
+   box-sizing: border-box;
+   padding: 0;
+   display: inline-block;
+   width: 357px;
+   height: 360px;
+   vertical-align: top;
+}
+#wb_Text15 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 20px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text15
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text15 div
+{
+   text-align: left;
+}
+#wb_Text15
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text16 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 3px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text16
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text16 div
+{
+   text-align: left;
+}
+#wb_Text16
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text17 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 8px 15px 0px 30px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text17
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text17 div
+{
+   text-align: left;
+}
+#wb_Text17
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text18 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 23px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text18
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text18 div
+{
+   text-align: left;
+}
+#wb_Text18
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text19 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 3px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text19
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text19 div
+{
+   text-align: left;
+}
+#wb_Text19
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#download
+{
+   display: -webkit-flex;
+   display: flex;
+   position: relative;
+   padding: 50px 10px 50px 10px;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: nowrap;
+   flex-wrap: nowrap;
+   -webkit-justify-content: space-around;
+   justify-content: space-around;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-align-content: flex-start;
+   align-content: flex-start;
+   margin: 0;
+   background-color: #FFEAE8;
+   background: linear-gradient(315deg, #EDC2D1 0%, #FFEAE8 100%);
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   font-size: 0px;
+}
+#wb_LayoutGrid8
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid8
+{
+   box-sizing: border-box;
+   padding: 0px 15px 0px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid8 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid8 > .row > .col-1, #LayoutGrid8 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0px;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid8 > .row > .col-1, #LayoutGrid8 > .row > .col-2
+{
+   float: left;
+}
+#LayoutGrid8 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 41.66666667%;
+   text-align: center;
+}
+#LayoutGrid8 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 58.33333333%;
+   text-align: left;
+}
+#LayoutGrid8:before,
+#LayoutGrid8:after,
+#LayoutGrid8 .row:before,
+#LayoutGrid8 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid8:after,
+#LayoutGrid8 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid8 > .row > .col-1, #LayoutGrid8 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Picture3
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Picture3
+{
+   border: 0px solid #000000;
+   box-sizing: border-box;
+   padding: 0;
+   display: inline-block;
+   width: 357px;
+   height: 399px;
+   vertical-align: top;
+}
+#wb_Text20 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 0px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text20
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text20 div
+{
+   text-align: left;
+}
+#wb_Text20
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text21 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 3px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text21
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text21 div
+{
+   text-align: left;
+}
+#wb_Text21
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text23 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 23px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text23
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text23 div
+{
+   text-align: left;
+}
+#wb_Text23
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text24 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 3px 15px 0px 15px;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text24
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text24 div
+{
+   text-align: left;
+}
+#wb_Text24
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text4 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0px 15px 0px 15px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text4
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text4 div
+{
+   text-align: center;
+}
+#wb_Text5 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text5
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text5 div
+{
+   text-align: center;
+}
+#wb_Text6 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text6
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text6 div
+{
+   text-align: center;
+}
+#wb_Text7 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text7
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text7 div
+{
+   text-align: center;
+}
+#wb_Text8 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 25px 15px 0px 15px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text8
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text8 div
+{
+   text-align: center;
+}
+#wb_Text9 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 5px 10px 15px 10px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text9
+{
+   color: #343A40;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text9 div
+{
+   text-align: center;
+}
+#wb_Text22 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text22
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text22 div
+{
+   text-align: center;
+}
+#wb_Text25 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text25
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text25 div
+{
+   text-align: center;
+}
+#wb_Text26 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text26
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text26 div
+{
+   text-align: center;
+}
+#wb_Text27 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text27
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text27 div
+{
+   text-align: center;
+}
+#wb_Text28 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text28
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text28 div
+{
+   text-align: center;
+}
+#wb_Text29 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 5px 10px 15px 10px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text29
+{
+   color: #343A40;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text29 div
+{
+   text-align: center;
+}
+#wb_Text30 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 25px 15px 0px 15px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text30
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text30 div
+{
+   text-align: center;
+}
+#wb_Text31 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text31
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text31 div
+{
+   text-align: center;
+}
+#wb_Text32 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   -webkit-flex-shrink: 1;
+   flex-shrink: 1;
+   -webkit-flex-basis: 100%;
+   flex-basis: 100%;
+   -webkit-align-self: auto;
+   align-self: auto;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text32
+{
+   color: #000000;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text32 div
+{
+   text-align: center;
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid1
+{
+   box-sizing: border-box;
+   padding: 0px 15px 0px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0px;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Heading5
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   vertical-align: top;
+   margin: 0;
+   padding: 5px 0px 0px 0px;
+   text-align: left;
+}
+#Heading5
+{
+   color: #D55A70;
+   font-family: "MS Sans Serif";
+   font-weight: bold;
+   font-style: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: left;
+}
+#footer
+{
+   display: -webkit-flex;
+   display: flex;
+   position: relative;
+   padding: 10px 10px 10px 10px;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-justify-content: space-between;
+   justify-content: space-between;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-align-content: flex-start;
+   align-content: flex-start;
+   margin: 0;
+   background-color: #414A4F;
+   background-image: none;
+   border: 0px solid #414A4F;
+   box-sizing: border-box;
+   font-size: 0px;
+}
+#wb_LayoutGrid2
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid2
+{
+   box-sizing: border-box;
+   padding: 0px 15px 0px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid2 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid2 > .row > .col-1, #LayoutGrid2 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0px;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid2 > .row > .col-1, #LayoutGrid2 > .row > .col-2
+{
+   float: left;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 50%;
+   text-align: left;
+}
+#LayoutGrid2 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   width: 50%;
+   text-align: left;
+}
+#LayoutGrid2:before,
+#LayoutGrid2:after,
+#LayoutGrid2 .row:before,
+#LayoutGrid2 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid2:after,
+#LayoutGrid2 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid2 > .row > .col-1, #LayoutGrid2 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Text33 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 25px 15px 0px 15px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text33
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text33 div
+{
+   text-align: center;
+}
+#wb_Text33
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text34 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 5px 10px 15px 10px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text34
+{
+   color: #343A40;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text34 div
+{
+   text-align: center;
+}
+#wb_Text34
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text35 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 25px 15px 0px 15px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text35
+{
+   color: #D55A70;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 19px;
+   line-height: 19px;
+}
+#wb_Text35 div
+{
+   text-align: center;
+}
+#wb_Text35
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Text36 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   padding: 5px 10px 15px 10px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text36
+{
+   color: #343A40;
+   font-family: Calibri;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 19px;
+}
+#wb_Text36 div
+{
+   text-align: center;
+}
+#wb_Text36
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+</style>
+<script src="jquery-1.12.4.min.js"></script>
+<script src="util.min.js"></script>
+<script src="scrollspy.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#home']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#home').offset().top }, 600, 'easeOutExpo');
+   });
+   $("a[href*='#features']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#features').offset().top }, 600, 'easeOutExpo');
+   });
+   $("a[href*='#howto']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#howto').offset().top }, 600, 'easeOutExpo');
+   });
+});
+</script>
+</head>
+<body data-spy="scroll">
+<div id="header">
+<div id="wb_LayoutGrid5">
+<div id="LayoutGrid5">
+<div class="row">
+<div class="col-1">
+<div id="wb_CssMenu2" style="display:inline-block;width:202px;height:28px;z-index:0;">
+<ul id="CssMenu2" role="menubar" class="nav">
+<li class="nav-item firstmain"><a role="menuitem" class="nav-link" href="https://rwelabs.github.io/" target="_self"><i class="fa fa-arrow-left">&nbsp;</i>rwelabs.github.io</a>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_CssMenu1" style="display:inline-block;width:608px;height:28px;z-index:1;">
+<ul id="CssMenu1" role="menubar" class="nav">
+<li class="nav-item firstmain"><a role="menuitem" class="nav-link" href="#home" target="_self">Home</a>
+</li>
+<li class="nav-item"><a role="menuitem" class="nav-link" href="#features" target="_self">Features</a>
+</li>
+<li class="nav-item"><a role="menuitem" class="nav-link" href="#howto" target="_self">How-To</a>
+</li>
+<li class="nav-item"><a role="menuitem" class="nav-link" href="#download" target="_self"><i class="fa fa-windows">&nbsp;</i>Download</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_home">
+<div id="home">
+<div id="wb_Image2" style="display:inline-block;width:787px;z-index:3;">
+<img src="images/SDVMM_Logo.png" id="Image2" alt="">
+</div>
+</div>
+</div>
+<div id="wb_features">
+<div id="features">
+<div id="wb_Heading2" style="display:inline-block;z-index:23;">
+<h1 id="Heading2">Stardew Valley Mod Manager</h1>
+</div>
+<div id="wb_Text2">
+<span style="color:#343A40;">The Stardew Valley Mod Manager and Modded Framework is an extension to SMAPI, the open-source modding framework API for Stardew Valley that lets players play the game with mods. Much alike SMAPI, The Stardew Valley Mod Manager does not edit or change any of the core game files and is installed as a completely separate executable to both the main game and the SMAPI launcher. <br><br>This powerful new application allows you to do a variety of different operations pertaining to mod management and game save management.<br><br></span>
+</div>
+<div id="wb_LayoutGrid6">
+<div id="LayoutGrid6">
+<div class="row">
+<div class="col-1">
+<picture id="wb_Picture1" style="display:block;width: 100%;height:398px;z-index:4">
+<img src="images/SDVMM220401_main.png" id="Picture1" alt="">
+</picture>
+</div>
+<div class="col-2">
+<div id="wb_Heading1" style="display:inline-block;width:512px;height:64px;z-index:5;">
+<h1 id="Heading1">Manage Mods</h1>
+</div>
+<div id="wb_Text10">
+<span style="color:#D55A70;"><strong>Install Mods and Entire Modpacks</strong></span>
+</div>
+<div id="wb_Text11">
+<span style="color:#000000;">With the Stardew Valley Mod Manager, you can Install Mods and Entire Modpacks with just a couple of clicks. Simply download your Mod from NexusMods (or elsewhere) as a ZIP file, click &quot;Install Mods&quot; and &quot;Install Mod (.zip)&quot; to install a mod. Or alternatively click &quot;Install a modpack&quot; to install an entire set of mods autonomously using a .svmp file, that developers can create to distribute multiple mods.</span>
+</div>
+<div id="wb_Text12">
+<span style="color:#000000;"><a href="https://github.com/RWELabs/Stardew-Valley-Mod-Manager/wiki/Developer:-Creating-A-Modpack-for-Distribution" class="RWELabsLinkStyle">&gt; How to make a Stardew Valley Modpack</a></span>
+</div>
+<div id="wb_Text13">
+<span style="color:#D55A70;"><strong>Enable and Disable Mods</strong></span>
+</div>
+<div id="wb_Text14">
+<span style="color:#000000;">With the Stardew Valley Mod Manager, you can have mods <strong>enabled </strong>(active in game) or <strong>disabled </strong>(not active in game). The benefit of this is that you don't have to completely uninstall your mods to disable them from your game. Now you can have multiple different game saves with different mods for each save active. Enabling and Disabling a mod is as easy as selecting it and clicking &quot;Enable&quot; or &quot;Disable&quot;</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid7">
+<div id="LayoutGrid7">
+<div class="row">
+<div class="col-1">
+<div id="wb_Text15">
+<span style="color:#D55A70;"><strong>Check for Mod Updates</strong></span>
+</div>
+<div id="wb_Text16">
+<span style="color:#000000;">With the Stardew Valley Mod Manager, you can check compatible<sup>*</sup> mods for available updates and then update them if updates are available with the Mod Update Check (Beta) added in Version 220304.</span>
+</div>
+<div id="wb_Text17">
+<span style="color:#000000;"><a href="https://github.com/RWELabs/Stardew-Valley-Mod-Manager/wiki/Developer:-Ensuring-Mods-are-Compatible-with-the-Mod-Update-Check-utility" class="RWELabsLinkStyle">&gt; Ensuring my mod is compatible with the Mod Update Check utility</a></span>
+</div>
+<div id="wb_Text18">
+<span style="color:#D55A70;"><strong>Creating and using Mod Presets</strong></span>
+</div>
+<div id="wb_Text19">
+<span style="color:#000000;">If you run different multiple modded save files, you can use the Stardew Valley Mod Manager to create presets that contain all relevant mod. To create a mod preset, simply add all mods you wish to use to the Enabled mods list, then click &quot;Save Preset&quot;. Once you've given it a name, simply click &quot;Load Preset&quot;, select your Preset and open it. All of the mods listed in your preset will become Enabled and all other Mods already in the enabled list will be automatically disabled. If you've removed a mod that was referenced in the preset, it will not be added to the enabled list.</span>
+</div>
+</div>
+<div class="col-2">
+<picture id="wb_Picture2" style="display:block;width: 100%;height:360px;z-index:16">
+<img src="images/SDVMM220401_update.png" id="Picture2" alt="">
+</picture>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid8">
+<div id="LayoutGrid8">
+<div class="row">
+<div class="col-1">
+<picture id="wb_Picture3" style="display:block;width: 100%;height:399px;z-index:17">
+<img src="images/SDVMM220401_gamesavemanagement.png" id="Picture3" alt="">
+</picture>
+</div>
+<div class="col-2">
+<div id="wb_Heading4" style="display:inline-block;width:512px;height:64px;z-index:18;">
+<h1 id="Heading4">Game Save Management</h1>
+</div>
+<div id="wb_Text20">
+<span style="color:#D55A70;"><strong>Backup Farms</strong></span>
+</div>
+<div id="wb_Text21">
+<span style="color:#000000;">By default, SMAPI comes with a farm backup utility that runs every time you play Stardew Valley. This backs up all of your saves. However, they are rotational and will only keep the most recently 5 snapshots. The Game Save Management tab allows you to access the SMAPI backups with the click of a button, as well as create a manual backup of your chosen game save with just two clicks.<br><br>Backups can be made on any of the farms listed in the &quot;My Farms&quot; list by selecting the farm and clicking &quot;Backup Selected Farm&quot;</span>
+</div>
+<div id="wb_Text23">
+<span style="color:#D55A70;"><strong>Delete and Manage Saves</strong></span>
+</div>
+<div id="wb_Text24">
+<span style="color:#000000;">From the Game Save Management tab, you can open your game saves folder with the click of a button to view all of your game saves. You can also select a game save from the list and click &quot;Delete Farm&quot; to remove the save entirely. This can be useful for any corrupted game saves that are crashing your game on launch.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_howto">
+<div id="howto">
+<div id="wb_Heading3" style="display:inline-block;z-index:28;">
+<h1 id="Heading3">How-To</h1>
+</div>
+<div id="wb_Text4">
+<span style="color:#D55A70;"><strong>Download and Installation</strong></span>
+</div>
+<div id="wb_Text1">
+<span style="color:#343A40;">Having trouble downloading or installing Stardew Valley Mod Manager?</span>
+</div>
+<div id="wb_Text5">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley/wiki/How-To:-Downloading-Stardew-Valley-Mod-Manager" class="RWELabsLinkStyle">&gt; How-To: Download and Install Stardew Valley Mod Manager</a></span>
+</div>
+<div id="wb_Text6">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley/wiki/How-To:-Setting-Up-Stardew-Valley-Mod-Manager" class="RWELabsLinkStyle">&gt; How-To: Setting up Stardew Valley Mod Manager</a></span>
+</div>
+<div id="wb_Text7">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley-Mod-Manager/wiki/How-To:-Updating-Stardew-Valley-Mod-Manager" class="RWELabsLinkStyle">&gt; How-To: Updating Stardew Valley Mod Manager</a></span>
+</div>
+<div id="wb_Text8">
+<span style="color:#D55A70;"><strong>Mod Management</strong></span>
+</div>
+<div id="wb_Text9">
+<span style="color:#343A40;">Not sure how to use the Mod Management features and tools?</span>
+</div>
+<div id="wb_Text22">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley/wiki/How-To:-Add-and-Remove-Mods" class="RWELabsLinkStyle">&gt; How-To: Add and Remove Mods</a></span>
+</div>
+<div id="wb_Text25">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley/wiki/How-To:-Enable-and-Disable-Mods" class="RWELabsLinkStyle">&gt; How-To: Enable and Disable Mods</a></span>
+</div>
+<div id="wb_Text26">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley/wiki/How-To:-Create-Mod-Presets" class="RWELabsLinkStyle">&gt; How-To: Create a Mod Preset</a></span>
+</div>
+<div id="wb_Text27">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley/wiki/How-To:-Load-Mod-Presets" class="RWELabsLinkStyle">&gt; How-To: Load a Mod Preset</a></span>
+</div>
+<div id="wb_Text28">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley-Mod-Manager/wiki/How-To:-Check-a-Mod-for-Updates-(Beta)" class="RWELabsLinkStyle">&gt; How-To: Check for Mod Updates (Beta)</a></span>
+</div>
+<div id="wb_Text30">
+<span style="color:#D55A70;"><strong>Game Save Managament</strong></span>
+</div>
+<div id="wb_Text29">
+<span style="color:#343A40;">Not sure how to use the Game Save Management features and tools?</span>
+</div>
+<div id="wb_Text31">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley-Mod-Manager/wiki/How-To:-Create-a-Game-Save-Backup" class="RWELabsLinkStyle">&gt; How-To: Create a Backup of a Game Save</a></span>
+</div>
+<div id="wb_Text32">
+<span style="color:#000000;"><a href="https://github.com/RyanWalpoleEnterprises/Stardew-Valley-Mod-Manager/wiki/How-To:-Deleting-a-game-save" class="RWELabsLinkStyle">&gt; How-To: Delete a Game Save</a></span>
+</div>
+</div>
+</div>
+<div id="StickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:91;">
+<div id="wb_up-arrow" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:45;">
+<a href="#home"><div id="up-arrow"><i class="fa fa-angle-up"></i></div></a></div>
+</div>
+<div id="download">
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div id="wb_IconFont1" style="display:inline-block;width:58px;height:51px;text-align:center;z-index:65;">
+<div id="IconFont1"><i class="fa fa-windows"></i></div>
+</div>
+<div id="wb_Heading5" style="display:inline-block;width:185px;height:64px;z-index:66;">
+<h1 id="Heading5">  Download</h1>
+</div>
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="row">
+<div class="col-1">
+<div id="wb_Text33">
+<span style="color:#D55A70;"><strong>System Requirements</strong></span>
+</div>
+<div id="wb_Text34">
+<span style="color:#343A40;"><strong>Operating System: <br></strong>Designed for Windows 11<br>Compatible with Windows 10, 8.1, 8 and 7<br><br><strong>Hardware Requirements<br></strong>300mb Available Disk Space Recommended<br>200mb Disk Space Required</span>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_Text35">
+<span style="color:#D55A70;"><strong>Download</strong></span>
+</div>
+<div id="wb_Text36">
+<span style="color:#343A40;"><strong>Source Code<br></strong>The source code for the Stardew Valley Mod Manager is available via the official GitHub Repository.<br> <a href="https://github.com/RWELabs/Stardew-Valley-Mod-Manager/" class="RWELabsLinkStyle">Learn More</a><br><br><strong>Download Installer (.exe)<br></strong><a href="https://github.com/RWELabs/Stardew-Valley-Mod-Manager/releases/latest" class="RWELabsLinkStyle">Download Latest Release</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="https://github.com/RWELabs/Stardew-Valley-Mod-Manager/releases" class="RWELabsLinkStyle">View all Releases</a></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="wb_Text3">
+<span style="color:#FFFFFF;">© Copyright 2022 - Ryan Walpole Enterprises - All Rights Reserved</span>
+</div>
+</div>
+</body>
+</html>
